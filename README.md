@@ -1,7 +1,7 @@
 # ALMESBAH — almesbah-eg.com rebuild
 
 Laravel 12 + Inertia + React 18 (public site) + **custom React dashboard** (no Filament).
-Live in **English + 中文** (`/en`, `/zh` with header switcher, per-locale SEO metas, hreflang, sitemap alternates). `ar` -ready — add the locale to `config/localization.php` and the routing, hreflang, sitemap, and translation tables are already wired. UI strings live in `lang/{en,zh}.json`; product/article content falls back to English until a `zh` translation row is added.
+Live in **English + 中文** (`/en`, `/zh` with header switcher, per-locale SEO metas, hreflang, sitemap alternates). `ar` -ready — add the locale to `config/localization.php` and the routing, hreflang, sitemap, and translation tables are already wired. UI strings live in `lang/{en,zh}.json`; all 8 products and the 4 published articles ship with full Chinese translations (`ZhContentSeeder`), and anything without a `zh` row falls back to English.
 
 **Design:** "Organic Premium" — Fraunces + Karla (self-hosted via @fontsource, China-safe), cream/forest/terracotta palette, linen-weave texture, fiber-strand hero motif.
 
@@ -121,7 +121,7 @@ npx playwright test          # site smoke + 301/410 + robots + sitemap + RFQ + d
 
 ## 7. 中文 — enabled
 
-`zh` is live: `/zh` routes, header language switcher, full Chinese UI strings (`lang/zh.json`), Chinese SEO titles/descriptions for all static pages (seeded, editable in dashboard → SEO), hreflang + sitemap alternates. Product/article **content** still falls back to English — add `zh` rows per product/article (dashboard locale tabs are the next step) as translations become available. Hosting note for China performance: HK/SG CDN + no Google-hosted assets (already true — fonts are bundled). `ar` later = same recipe.
+`zh` is live: `/zh` routes, header language switcher, full Chinese UI strings (`lang/zh.json`), Chinese SEO titles/descriptions for all static pages (seeded, editable in dashboard → SEO), hreflang + sitemap alternates. **Content is translated too**: all 8 products (name, summary, description, specs, uses, SEO) and the 4 published articles (`database/seeders/ZhContentSeeder.php`, keyed by English slug — safe to re-run). Draft articles remain English until published. Dashboard editors still write the `en` row; locale tabs are the next step. Hosting note for China performance: HK/SG CDN + no Google-hosted assets (already true — fonts are bundled). `ar` later = same recipe.
 
 ---
 **Deployment kit:** see `custom/deploy/DEPLOYMENT-CHECKLIST-AR.md` (خطوة بخطوة بالعربي), `custom/.env.production.example`, `custom/deploy/root.htaccess` (fallback docroot), and `custom/public/install.php` (one-time web installer — change its token, it self-deletes). Index-cleanup tasks are parked at the bottom of the checklist until actual go-live.

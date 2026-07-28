@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             ArticleSeeder::class,
             GallerySeeder::class,
+            ZhContentSeeder::class,
         ]);
     }
 }
