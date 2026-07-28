@@ -19,7 +19,7 @@ export default function Footer() {
                 </div>
                 <div className="cols">
                     <div className="foot-brand">
-                        <strong>ALMESBAH</strong>
+                        <img src="/images/logo-light.png" alt="ALMESBAH — For Egy Flax" />
                         <p>{t("footer.tagline")}</p>
                         <p style={{ marginTop: "1rem", fontSize: ".85rem" }}>ISO 9001:2015 · OSS Middle East</p>
                     </div>

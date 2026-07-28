@@ -110,9 +110,9 @@ header { position: sticky; top: 0; z-index: 50; }
     border-bottom: 1px solid var(--sand);
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; gap: 1rem; }
-.brand { display: flex; flex-direction: column; line-height: 1; }
-.brand strong { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--forest); letter-spacing: .04em; }
-.brand span { font-size: .62rem; letter-spacing: .34em; color: var(--terracotta); font-weight: 700; margin-top: .28rem; }
+.brand { display: flex; align-items: center; }
+.brand img { height: 58px; width: auto; display: block; }
+.brand .brand-light { display: none; }
 .nav-links { display: flex; gap: 1.6rem; align-items: center; }
 .nav-links a { font-weight: 500; font-size: .95rem; color: var(--ink); position: relative; padding: .3rem 0; }
 .nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: var(--terracotta); transition: right .22s ease; }
@@ -317,8 +317,8 @@ footer .cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 2.5
 footer h4 { color: var(--cream); font-size: 1rem; margin-bottom: 1rem; letter-spacing: .04em; }
 footer a:hover { color: var(--gold); }
 footer ul { list-style: none; display: grid; gap: .55rem; font-size: .92rem; }
-.foot-brand strong { font-family: var(--font-display); color: var(--cream); font-size: 1.4rem; letter-spacing: .05em; }
-.foot-brand p { font-size: .9rem; margin-top: .7rem; opacity: .8; }
+.foot-brand img { height: 74px; width: auto; }
+.foot-brand p { font-size: .9rem; margin-top: .9rem; opacity: .8; }
 .foot-legal { border-top: 1px solid color-mix(in srgb, var(--cream) 14%, transparent); padding: 1.3rem 0; font-size: .8rem; text-align: center; opacity: .75; display: grid; gap: .3rem; }
 .foot-legal a { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -359,8 +359,8 @@ footer ul { list-style: none; display: grid; gap: .55rem; font-size: .92rem; }
     .nav-burger { display: block; position: relative; z-index: 61; }
     .nav .wrap:has(.nav-links.open) .nav-burger { color: var(--cream); }
     .nav .wrap:has(.nav-links.open) .brand { position: relative; z-index: 61; }
-    .nav .wrap:has(.nav-links.open) .brand strong { color: var(--cream); }
-    .nav .wrap:has(.nav-links.open) .brand span { color: var(--gold); }
+    .nav .wrap:has(.nav-links.open) .brand .brand-dark { display: none; }
+    .nav .wrap:has(.nav-links.open) .brand .brand-light { display: block; }
 
     /* photo leads on small screens: home hero + any split section (about) */
     .hero-art { order: -1; margin-bottom: 2rem; }

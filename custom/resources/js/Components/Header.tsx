@@ -28,8 +28,8 @@ export default function Header() {
             <nav className="nav">
                 <div className="wrap">
                     <Link href={url("/")} className="brand" aria-label="ALMESBAH — home">
-                        <strong>ALMESBAH</strong>
-                        <span>EGYPTIAN FLAX · EST. NILE DELTA</span>
+                        <img className="brand-dark" src="/images/logo.png" alt="ALMESBAH — For Egy Flax" />
+                        <img className="brand-light" src="/images/logo-light.png" alt="" aria-hidden />
                     </Link>
                     <button className="nav-burger" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>{open ? "✕" : "☰"}</button>
                     <div className={`nav-links ${open ? "open" : ""}`}>
