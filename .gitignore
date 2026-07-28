@@ -1,0 +1,10 @@
+# Generated working app — recreate any time with ./setup.sh + the custom/ overlay
+# (see README "1. Install"). The source of truth for all project files is custom/.
+/almesbah/
+
+node_modules/
+vendor/
+.env
+.env.production
+*.log
+.DS_Store

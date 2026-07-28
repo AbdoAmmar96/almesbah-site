@@ -1,0 +1,11 @@
+# ضع هذا الملف باسم .htaccess في جذر الحساب (public_html) فقط إذا
+# لم تستطع تغيير الـ Document Root إلى مجلد public/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+</IfModule>
+# منع الوصول المباشر للملفات الحساسة
+<FilesMatch "^\.env|composer\.(json|lock)$">
+    Require all denied
+</FilesMatch>
