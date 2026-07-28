@@ -14,6 +14,12 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
         ]);
+
+        // There is no named `login` route — the React dashboard renders its own
+        // login screen. Without this, a guest hitting /dashboard/api/* from the
+        // address bar blows up with "Route [login] not defined" (500) instead of
+        // landing on the login screen. XHR callers still get a clean 401.
+        $middleware->redirectGuestsTo('/dashboard');
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // The old WordPress was injected with 300+ casino spam posts.
