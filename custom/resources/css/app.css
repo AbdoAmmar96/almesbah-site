@@ -284,6 +284,19 @@ header { position: sticky; top: 0; z-index: 50; }
 .field input:focus, .field select:focus, .field textarea:focus {
     outline: none; border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(196,90,58,.15);
 }
+/* selects: replace the native chrome with the site's own look */
+.field select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%231f3a2c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .95rem center;
+    background-size: 12px 8px;
+    padding-inline-end: 2.6rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+[dir="rtl"] .field select { background-position: left .95rem center; }
+.field select option { background: var(--paper); color: var(--ink); }
 .field .err { color: var(--terracotta-2); font-size: .8rem; margin-top: .3rem; }
 .form-ok { background: var(--sage); color: var(--forest-2); padding: 1rem 1.3rem; border-radius: 10px; font-weight: 600; }
 
@@ -349,8 +362,9 @@ footer ul { list-style: none; display: grid; gap: .55rem; font-size: .92rem; }
     .nav .wrap:has(.nav-links.open) .brand strong { color: var(--cream); }
     .nav .wrap:has(.nav-links.open) .brand span { color: var(--gold); }
 
-    /* home hero: photo leads on small screens */
+    /* photo leads on small screens: home hero + any split section (about) */
     .hero-art { order: -1; margin-bottom: 2rem; }
+    .split > .img { order: -1; }
 }
 @media (max-width: 620px) {
     .grid-3, .grid-4 { grid-template-columns: 1fr; }
