@@ -2,15 +2,17 @@ import SiteLayout from "@/Layouts/SiteLayout";
 import PageHero from "@/Components/PageHero";
 import Reveal from "@/Components/Reveal";
 import RfqBanner from "@/Components/RfqBanner";
+import { useT } from "@/i18n";
 import type { Seo } from "@/types";
 
 export default function Certifications({ seo }: { seo: Seo }) {
+    const { t } = useT();
     return (
         <SiteLayout seo={seo}>
             <PageHero
-                eyebrow="Certifications"
-                title={<>ISO 9001:2015, <em style={{ color: "var(--terracotta)" }}>audited annually</em></>}
-                lead="Certified by OSS Middle East — covering quality management across our import and export operations."
+                eyebrow={t("nav.certifications", "Certifications")}
+                title={<>{t("certs.hero_t1", "ISO 9001:2015,")} <em style={{ color: "var(--terracotta)" }}>{t("certs.hero_t2", "audited annually")}</em></>}
+                lead={t("certs.hero_lead", "Certified by OSS Middle East — covering quality management across our import and export operations.")}
             />
             <section>
                 <div className="wrap split">

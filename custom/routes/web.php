@@ -55,6 +55,7 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/seo', [Dash\SeoMetaController::class, 'index']);
         Route::put('/seo/{seoMeta}', [Dash\SeoMetaController::class, 'update']);
         Route::post('/upload', [Dash\UploadController::class, 'store']);
+        Route::apiResource('/users', Dash\UserController::class)->except(['show']);
     });
 
     // SPA catch-all (login screen handles guests client-side)

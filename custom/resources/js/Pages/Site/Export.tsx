@@ -11,8 +11,8 @@ export default function Export({ seo }: { seo: Seo }) {
         <SiteLayout seo={seo}>
             <PageHero
                 eyebrow={t("nav.export")}
-                title={<>How an order <em style={{ color: "var(--terracotta)" }}>actually runs</em></>}
-                lead="Packing standards, container math, and shipping terms — so your first order feels like your tenth."
+                title={<>{t("export.hero_t1", "How an order")} <em style={{ color: "var(--terracotta)" }}>{t("export.hero_t2", "actually runs")}</em></>}
+                lead={t("export.hero_lead", "Packing standards, container math, and shipping terms — so your first order feels like your tenth.")}
             />
             <section>
                 <div className="wrap" style={{ display: "grid", gap: "2.6rem" }}>

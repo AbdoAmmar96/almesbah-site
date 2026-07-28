@@ -1,7 +1,7 @@
 # ALMESBAH — almesbah-eg.com rebuild
 
 Laravel 12 + Inertia + React 18 (public site) + **custom React dashboard** (no Filament).
-English-first, i18n-ready for `zh` / `ar` — add the locale to `config/localization.php` and the routing, hreflang, sitemap, and translation tables are already wired.
+Live in **English + 中文** (`/en`, `/zh` with header switcher, per-locale SEO metas, hreflang, sitemap alternates). `ar` -ready — add the locale to `config/localization.php` and the routing, hreflang, sitemap, and translation tables are already wired. UI strings live in `lang/{en,zh}.json`; product/article content falls back to English until a `zh` translation row is added.
 
 **Design:** "Organic Premium" — Fraunces + Karla (self-hosted via @fontsource, China-safe), cream/forest/terracotta palette, linen-weave texture, fiber-strand hero motif.
 
@@ -11,9 +11,13 @@ English-first, i18n-ready for `zh` / `ar` — add the locale to `config/localiza
 
 ### Public site
 
-| Home | Products |
+| Home (EN) | Home (中文) |
 | --- | --- |
-| ![Home](docs/screenshots/home.png) | ![Products](docs/screenshots/products.png) |
+| ![Home](docs/screenshots/home.png) | ![Home zh](docs/screenshots/home-zh.png) |
+
+| Products | |
+| --- | --- |
+| ![Products](docs/screenshots/products.png) | |
 
 | About | Product detail |
 | --- | --- |
@@ -45,9 +49,13 @@ English-first, i18n-ready for `zh` / `ar` — add the locale to `config/localiza
 | --- | --- |
 | ![Dashboard products](docs/screenshots/dashboard-products.png) | ![Dashboard articles](docs/screenshots/dashboard-articles.png) |
 
-| Settings | |
+| Settings | Users (admin only) |
 | --- | --- |
-| ![Dashboard settings](docs/screenshots/dashboard-settings.png) | |
+| ![Dashboard settings](docs/screenshots/dashboard-settings.png) | ![Dashboard users](docs/screenshots/dashboard-users.png) |
+
+| Account (change own password) | |
+| --- | --- |
+| ![Dashboard account](docs/screenshots/dashboard-account.png) | |
 
 ---
 
@@ -65,7 +73,9 @@ npm run build
 php artisan serve                # http://localhost:8000/en  ·  /dashboard
 ```
 
-**Dashboard login:** `admin@almesbah-eg.com` / `password` → **change immediately in production** (tinker: `User::first()->update(['password' => bcrypt('...')])`).
+**Dashboard login:** `admin@almesbah-eg.com` / `password` → **change immediately in production** — from the dashboard itself: **Account → Change password**.
+
+**User management (dashboard → Users, admins only):** admins add/delete users and reset anyone's password; `editor` users can only change their own password (Account page). The seeded account is the first admin.
 
 ## 2. What was fixed from the old site (talk track for the client)
 
@@ -109,9 +119,9 @@ npx playwright test          # site smoke + 301/410 + robots + sitemap + RFQ + d
 - Certificate PDF for the Certifications page download
 - SMTP credentials in `.env` so RFQ emails deliver (leads are captured in the dashboard regardless)
 
-## 7. Phase 2 — 中文 (when ready)
+## 7. 中文 — enabled
 
-`config/localization.php` → `'supported' => ['en','zh']`, add `lang/zh.json`, add `zh` rows in the dashboard editors. Hreflang, sitemap alternates, and routing pick it up automatically. Hosting note for China performance: HK/SG CDN + no Google-hosted assets (already true — fonts are bundled).
+`zh` is live: `/zh` routes, header language switcher, full Chinese UI strings (`lang/zh.json`), Chinese SEO titles/descriptions for all static pages (seeded, editable in dashboard → SEO), hreflang + sitemap alternates. Product/article **content** still falls back to English — add `zh` rows per product/article (dashboard locale tabs are the next step) as translations become available. Hosting note for China performance: HK/SG CDN + no Google-hosted assets (already true — fonts are bundled). `ar` later = same recipe.
 
 ---
 **Deployment kit:** see `custom/deploy/DEPLOYMENT-CHECKLIST-AR.md` (خطوة بخطوة بالعربي), `custom/.env.production.example`, `custom/deploy/root.htaccess` (fallback docroot), and `custom/public/install.php` (one-time web installer — change its token, it self-deletes). Index-cleanup tasks are parked at the bottom of the checklist until actual go-live.

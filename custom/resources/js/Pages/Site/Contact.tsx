@@ -26,8 +26,8 @@ export default function Contact({ seo, products }: { seo: Seo; products: string[
         <SiteLayout seo={seo}>
             <PageHero
                 eyebrow={t("nav.contact")}
-                title={<>Fiber, quantity, destination.<br /><em style={{ color: "var(--terracotta)" }}>We take it from there.</em></>}
-                lead="One business day to a reply — from Egypt or Guangzhou, whichever is awake."
+                title={<>{t("contact.hero_t1", "Fiber, quantity, destination.")}<br /><em style={{ color: "var(--terracotta)" }}>{t("contact.hero_t2", "We take it from there.")}</em></>}
+                lead={t("contact.hero_lead", "One business day to a reply — from Egypt or Guangzhou, whichever is awake.")}
             />
             <section>
                 <div className="wrap split" style={{ alignItems: "start" }}>

@@ -52,7 +52,7 @@ export default function Footer() {
                 </div>
                 <div className="foot-legal">
                     <span>© {year} ALMESBAH For Export. {t("footer.rights")}</span>
-                    <span>© {year} <a href="#">Business Partner for Information Technology</a>. All rights reserved.</span>
+                    <span>© {year} <a href="https://bp-eg.com/" target="_blank" rel="noopener">Business Partner for Information Technology</a>. All rights reserved.</span>
                 </div>
             </div>
         </footer>

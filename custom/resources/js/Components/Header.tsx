@@ -1,11 +1,15 @@
 import { Link, usePage } from "@inertiajs/react";
 import { useState } from "react";
-import { useT } from "@/i18n";
+import { useShared, useT } from "@/i18n";
+
+const LOCALE_LABELS: Record<string, string> = { en: "EN", zh: "中文", ar: "العربية" };
 
 export default function Header() {
-    const { t, url } = useT();
+    const { locales } = useShared();
+    const { t, url, locale } = useT();
     const [open, setOpen] = useState(false);
     const path = (usePage().url as string) || "";
+    const bare = path.replace(new RegExp(`^/${locale}`), "") || "/";
 
     const links = [
         ["/", "nav.home"], ["/about", "nav.about"], ["/products", "nav.products"],
@@ -30,6 +34,16 @@ export default function Header() {
                                 {t(key)}
                             </Link>
                         ))}
+                        {locales.length > 1 && (
+                            <span className="lang-switch">
+                                {locales.map((l) => (
+                                    <a key={l} href={`/${l}${bare === "/" ? "" : bare}`}
+                                        className={l === locale ? "on" : ""}>
+                                        {LOCALE_LABELS[l] ?? l.toUpperCase()}
+                                    </a>
+                                ))}
+                            </span>
+                        )}
                         <Link href={url("/contact")} className="btn btn-primary" style={{ padding: ".65rem 1.3rem" }}>
                             {t("cta.quote")}
                         </Link>

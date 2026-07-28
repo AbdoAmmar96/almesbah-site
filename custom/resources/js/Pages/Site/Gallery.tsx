@@ -12,8 +12,8 @@ export default function Gallery({ seo, items }: { seo: Seo; items: Item[] }) {
         <SiteLayout seo={seo}>
             <PageHero
                 eyebrow={t("nav.gallery")}
-                title={<>Inside the mill</>}
-                lead="Scutching lines, hackling beds, pressed bales, and shipments on their way out."
+                title={<>{t("gallery.hero_t", "Inside the mill")}</>}
+                lead={t("gallery.hero_lead", "Scutching lines, hackling beds, pressed bales, and shipments on their way out.")}
             />
             <section>
                 <div className="wrap">

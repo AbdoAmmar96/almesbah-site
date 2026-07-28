@@ -11,8 +11,10 @@ import Inquiries from "./pages/Inquiries";
 import GalleryPage from "./pages/Gallery";
 import Settings from "./pages/Settings";
 import SeoPage from "./pages/Seo";
+import Users from "./pages/Users";
+import Account from "./pages/Account";
 
-type User = { id: number; name: string; email: string };
+type User = { id: number; name: string; email: string; is_admin: boolean };
 
 export default function App() {
     const [user, setUser] = useState<User | null | undefined>(undefined);
@@ -32,10 +34,12 @@ export default function App() {
         setUser(null);
     };
 
-    const links = [
+    const links: [string, string][] = [
         ["/", "Overview"], ["/products", "Products"], ["/articles", "Articles"],
         ["/inquiries", "Inquiries"], ["/gallery", "Gallery"], ["/seo", "SEO"], ["/settings", "Settings"],
-    ] as const;
+        ...(user.is_admin ? [["/users", "Users"] as [string, string]] : []),
+        ["/account", "Account"],
+    ];
 
     return (
         <div className="layout">
@@ -61,6 +65,8 @@ export default function App() {
                     <Route path="/gallery" element={<GalleryPage />} />
                     <Route path="/seo" element={<SeoPage />} />
                     <Route path="/settings" element={<Settings />} />
+                    {user.is_admin && <Route path="/users" element={<Users meId={user.id} />} />}
+                    <Route path="/account" element={<Account me={user} />} />
                 </Routes>
             </main>
         </div>

@@ -12,8 +12,8 @@ export default function About({ seo }: { seo: Seo }) {
         <SiteLayout seo={seo}>
             <PageHero
                 eyebrow={t("nav.about")}
-                title={<>The Delta grows it.<br /><em style={{ color: "var(--terracotta)" }}>We dress it for the world.</em></>}
-                lead="One of the Middle East's oldest and largest flax producers — a mill in Shubrameles, offices in Guangzhou & Hebei, and customers across Europe and Asia."
+                title={<>{t("about.hero_t1", "The Delta grows it.")}<br /><em style={{ color: "var(--terracotta)" }}>{t("about.hero_t2", "We dress it for the world.")}</em></>}
+                lead={t("about.hero_lead", "One of the Middle East's oldest and largest flax producers — a mill in Shubrameles, offices in Guangzhou & Hebei, and customers across Europe and Asia.")}
             />
             <section>
                 <div className="wrap split">

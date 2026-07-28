@@ -11,7 +11,8 @@ class SeoMeta extends Model
 
     public static function for(string $route, array $fallback = []): array
     {
-        $m = static::where('route', $route)->where('locale', app()->getLocale())->first();
+        $m = static::where('route', $route)->where('locale', app()->getLocale())->first()
+            ?? static::where('route', $route)->where('locale', config('localization.default'))->first();
         return [
             'title'       => $m->title ?? $fallback['title'] ?? config('app.name'),
             'description' => $m->description ?? $fallback['description'] ?? '',

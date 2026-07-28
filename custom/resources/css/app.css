@@ -118,6 +118,10 @@ header { position: sticky; top: 0; z-index: 50; }
 .nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: var(--terracotta); transition: right .22s ease; }
 .nav-links a:not(.btn):hover::after, .nav-links a.active::after { right: 0; }
 .nav-burger { display: none; background: none; border: 0; font-size: 1.7rem; color: var(--forest); cursor: pointer; }
+.lang-switch { display: inline-flex; border: 1.5px solid var(--sand); border-radius: 999px; overflow: hidden; }
+.lang-switch a { padding: .3rem .8rem !important; font-size: .8rem !important; font-weight: 700; color: var(--muted); }
+.lang-switch a.on { background: var(--forest); color: var(--cream); }
+.lang-switch a:not(.btn)::after { display: none; }
 
 /* ---------- hero ---------- */
 .hero { padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(4rem, 9vw, 7.5rem); overflow: hidden; }

@@ -48,11 +48,52 @@ class SeoMetaSeeder extends Seeder
             ],
         ];
 
-        foreach ($en as $route => [$title, $description]) {
-            SeoMeta::updateOrCreate(
-                ['route' => $route, 'locale' => 'en'],
-                ['title' => $title, 'description' => $description]
-            );
+        $zh = [
+            'home' => [
+                '埃及亚麻纤维供应商与出口商 | ALMESBAH（麦斯巴赫）',
+                'ALMESBAH 在埃及尼罗河三角洲自有工厂加工亚麻，向全球十国出口打成麻、梳成麻、短麻与麻线。ISO 9001:2015 认证，欢迎询价。',
+            ],
+            'about' => [
+                '关于 ALMESBAH —— 埃及亚麻工厂，广州办事处',
+                '中东历史最悠久、规模最大的亚麻生产商之一。工厂位于埃及舒卜拉迈勒斯，办事处设在广州与河北，客户遍布欧亚。',
+            ],
+            'products' => [
+                '亚麻纤维产品 —— 打成麻、梳成麻、短麻、麻线 | ALMESBAH',
+                '一家埃及工厂的八大亚麻产品线：棉型亚麻、打成麻（A/B 级）、梳成麻、麻把、回收短麻、麻纱线轴、麻线与管道密封麻。',
+            ],
+            'industries' => [
+                '供应行业 —— 纺纱、造纸、保温、管道密封',
+                '埃及亚麻纤维的应用去向：棉纺系统纺纱厂、高档亚麻布生产商、特种纸、天然保温材料与管道五金贸易商。',
+            ],
+            'export' => [
+                '出口流程 —— 包装、麻包、贸易术语 | ALMESBAH',
+                '集装箱适配麻包（200–250 公斤）、麻布包装麻把、灵活的零售包装，以及适合进口商的贸易条款。了解 ALMESBAH 订单的运作方式。',
+            ],
+            'gallery' => [
+                '工厂实景 —— 走进我们的亚麻工厂 | ALMESBAH',
+                '舒卜拉迈勒斯 ALMESBAH 工厂实拍：打麻、梳麻、打包，以及发往欧亚的货柜。',
+            ],
+            'blog' => [
+                '亚麻纤维知识库 | ALMESBAH 博客',
+                '为亚麻采购商准备的通俗指南：等级、加工工序、混纺比例、进口物流，以及来自埃及工厂的市场洞察。',
+            ],
+            'certifications' => [
+                '资质认证 —— ISO 9001:2015 | ALMESBAH',
+                'ALMESBAH 通过 OSS Middle East 的 ISO 9001:2015 认证，覆盖进出口业务的质量管理体系。',
+            ],
+            'contact' => [
+                '联系 ALMESBAH —— 获取亚麻纤维报价',
+                '告诉我们纤维品类、数量与目的港。埃及与广州团队将回复规格、包装方案与正式报价。',
+            ],
+        ];
+
+        foreach (['en' => $en, 'zh' => $zh] as $locale => $rows) {
+            foreach ($rows as $route => [$title, $description]) {
+                SeoMeta::updateOrCreate(
+                    ['route' => $route, 'locale' => $locale],
+                    ['title' => $title, 'description' => $description]
+                );
+            }
         }
     }
 }

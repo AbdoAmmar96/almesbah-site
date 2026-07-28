@@ -40,8 +40,8 @@ export default function Industries({ seo }: { seo: Seo }) {
         <SiteLayout seo={seo}>
             <PageHero
                 eyebrow={t("nav.industries")}
-                title={<>Where our fiber <em style={{ color: "var(--terracotta)" }}>ends up</em></>}
-                lead="Five industries, one mill. Find your application and the fiber that fits it."
+                title={<>{t("industries.hero_t1", "Where our fiber")} <em style={{ color: "var(--terracotta)" }}>{t("industries.hero_t2", "ends up")}</em></>}
+                lead={t("industries.hero_lead", "Five industries, one mill. Find your application and the fiber that fits it.")}
             />
             <section>
                 <div className="wrap" style={{ display: "grid", gap: "1.6rem" }}>

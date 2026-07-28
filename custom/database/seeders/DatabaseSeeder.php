@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     {
         User::updateOrCreate(
             ['email' => 'admin@almesbah-eg.com'],
-            ['name' => 'ALMESBAH Admin', 'password' => Hash::make('password')]
+            ['name' => 'ALMESBAH Admin', 'password' => Hash::make('password'), 'is_admin' => true]
         );
 
         $this->call([

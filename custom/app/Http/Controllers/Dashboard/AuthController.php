@@ -15,7 +15,7 @@ class AuthController extends Controller
             return response()->json(['message' => 'Invalid credentials'], 422);
         }
         $request->session()->regenerate();
-        return response()->json(['user' => Auth::user()->only('id', 'name', 'email')]);
+        return response()->json(['user' => Auth::user()->only('id', 'name', 'email', 'is_admin')]);
     }
 
     public function logout(Request $request)
@@ -28,6 +28,6 @@ class AuthController extends Controller
 
     public function me(Request $request)
     {
-        return response()->json(['user' => $request->user()->only('id', 'name', 'email')]);
+        return response()->json(['user' => $request->user()->only('id', 'name', 'email', 'is_admin')]);
     }
 }

@@ -12,8 +12,8 @@ export default function Products({ seo, products }: { seo: Seo; products: Produc
         <SiteLayout seo={seo}>
             <PageHero
                 eyebrow={t("nav.products")}
-                title={<>Eight product lines. <em style={{ color: "var(--terracotta)" }}>One quality system.</em></>}
-                lead="Every stage of the flax value chain, from turbine-fresh scutched fiber to retail-ready plumbing dispensers."
+                title={<>{t("products.hero_t1", "Eight product lines.")} <em style={{ color: "var(--terracotta)" }}>{t("products.hero_t2", "One quality system.")}</em></>}
+                lead={t("products.hero_lead", "Every stage of the flax value chain, from turbine-fresh scutched fiber to retail-ready plumbing dispensers.")}
             />
             <section>
                 <div className="wrap">
