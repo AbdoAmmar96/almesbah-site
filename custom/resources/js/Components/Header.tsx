@@ -1,5 +1,5 @@
 import { Link, usePage } from "@inertiajs/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useShared, useT } from "@/i18n";
 
 const LOCALE_LABELS: Record<string, string> = { en: "EN", zh: "中文", ar: "العربية" };
@@ -10,6 +10,12 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const path = (usePage().url as string) || "";
     const bare = path.replace(new RegExp(`^/${locale}`), "") || "/";
+
+    // fullscreen mobile menu: freeze the page behind it
+    useEffect(() => {
+        document.body.style.overflow = open ? "hidden" : "";
+        return () => { document.body.style.overflow = ""; };
+    }, [open]);
 
     const links = [
         ["/", "nav.home"], ["/about", "nav.about"], ["/products", "nav.products"],
@@ -25,7 +31,7 @@ export default function Header() {
                         <strong>ALMESBAH</strong>
                         <span>EGYPTIAN FLAX · EST. NILE DELTA</span>
                     </Link>
-                    <button className="nav-burger" onClick={() => setOpen(!open)} aria-label="Menu">☰</button>
+                    <button className="nav-burger" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>{open ? "✕" : "☰"}</button>
                     <div className={`nav-links ${open ? "open" : ""}`}>
                         {links.map(([href, key]) => (
                             <Link key={href} href={url(href)}

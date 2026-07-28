@@ -326,13 +326,31 @@ footer ul { list-style: none; display: grid; gap: .55rem; font-size: .92rem; }
     .masonry { columns: 2; }
     footer .cols { grid-template-columns: 1fr 1fr; }
     .pd .photo { position: static; }
+    /* fullscreen mobile menu.
+       backdrop-filter turns .nav into the containing block for fixed
+       descendants, which would trap the overlay inside the bar — drop it
+       while the menu is open. */
+    .nav:has(.nav-links.open) { backdrop-filter: none; }
     .nav-links {
-        display: none; position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--paper); flex-direction: column; padding: 1.4rem 6vw 1.8rem;
-        border-bottom: 1px solid var(--sand); gap: 1.1rem; align-items: flex-start;
+        display: none; position: fixed; inset: 0; z-index: 60;
+        background: var(--forest-2);
+        flex-direction: column; justify-content: center; align-items: center;
+        gap: 1.5rem; padding: 5.5rem 8vw 3rem;
     }
     .nav-links.open { display: flex; }
-    .nav-burger { display: block; }
+    .nav-links a:not(.btn) { color: var(--cream); font-size: 1.35rem; font-weight: 600; }
+    .nav-links a.btn { margin-top: 1rem; }
+    .nav-links .lang-switch { margin-top: .6rem; border-color: color-mix(in srgb, var(--cream) 35%, transparent); }
+    .nav-links .lang-switch a { font-size: .9rem !important; font-weight: 700; color: color-mix(in srgb, var(--cream) 75%, transparent); }
+    .nav-links .lang-switch a.on { background: var(--cream); color: var(--forest-2); }
+    .nav-burger { display: block; position: relative; z-index: 61; }
+    .nav .wrap:has(.nav-links.open) .nav-burger { color: var(--cream); }
+    .nav .wrap:has(.nav-links.open) .brand { position: relative; z-index: 61; }
+    .nav .wrap:has(.nav-links.open) .brand strong { color: var(--cream); }
+    .nav .wrap:has(.nav-links.open) .brand span { color: var(--gold); }
+
+    /* home hero: photo leads on small screens */
+    .hero-art { order: -1; margin-bottom: 2rem; }
 }
 @media (max-width: 620px) {
     .grid-3, .grid-4 { grid-template-columns: 1fr; }
