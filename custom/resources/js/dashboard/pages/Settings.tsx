@@ -3,13 +3,12 @@ import { api } from "../api";
 
 const FIELDS: [string, string][] = [
     ["email", "Public email"], ["inquiry_email", "Inquiries go to"],
-    ["phone", "Phone — line 1"], ["whatsapp", "WhatsApp line 1 (digits only)"],
-    ["phone2", "Phone — line 2"], ["whatsapp2", "WhatsApp line 2 (digits only)"],
+    ["phone", "Line 1 — phone"], ["whatsapp", "Line 1 — WhatsApp (digits only)"],
+    ["wechat_url", "Line 1 — WeChat link (u.wechat.com/…)"], ["wechat_qr", "Line 1 — WeChat QR image"],
+    ["phone2", "Line 2 — phone"], ["whatsapp2", "Line 2 — WhatsApp (digits only)"],
+    ["wechat_url2", "Line 2 — WeChat link (u.wechat.com/…)"], ["wechat_qr2", "Line 2 — WeChat QR image"],
     ["address_en", "Address (EN)"], ["china_office", "China office"],
     ["map_url", "Google Maps URL"],
-    ["wechat_id", "WeChat ID / number"],
-    ["wechat_url", "WeChat add-friend link (u.wechat.com/…)"],
-    ["wechat_qr", "WeChat QR image path"],
     ["founded", "Founded year"], ["linkedin", "LinkedIn URL"],
 ];
 

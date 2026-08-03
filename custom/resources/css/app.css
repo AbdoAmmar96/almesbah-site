@@ -343,9 +343,11 @@ footer ul { list-style: none; display: grid; gap: .55rem; font-size: .92rem; }
     transition: transform .18s ease;
 }
 .wechat-btn:hover { transform: scale(1.08); }
+.wechat-btn svg { width: 28px; height: 28px; }
 .wechat-card {
     position: absolute; inset-inline-end: 0; bottom: calc(100% + .7rem);
-    width: 244px; padding: 1.15rem 1.1rem 1rem; text-align: center;
+    width: 216px; padding: 1.15rem 1.05rem 1rem; text-align: center;
+    max-height: calc(100vh - 11rem); overflow-y: auto;
     background: var(--paper); color: var(--ink);
     border: 1px solid color-mix(in srgb, var(--forest) 14%, transparent);
     border-radius: var(--radius); box-shadow: var(--shadow);
@@ -356,24 +358,25 @@ footer ul { list-style: none; display: grid; gap: .55rem; font-size: .92rem; }
     display: block; font-family: var(--font-display); color: var(--forest);
     font-size: 1.02rem; margin-bottom: .7rem;
 }
-.wechat-card img { width: 168px; height: 168px; margin-inline: auto; border-radius: 8px; background: #fff; }
-.wechat-card small { display: block; margin-top: .7rem; font-size: .71rem; color: var(--muted); line-height: 1.5; }
+.wechat-card small { display: block; margin-top: .8rem; font-size: .71rem; color: var(--muted); line-height: 1.5; }
 .wechat-x {
     position: absolute; inset-inline-end: .4rem; top: .3rem; padding: .3rem;
     border: 0; background: none; color: var(--muted); font-size: .9rem; line-height: 1; cursor: pointer;
 }
 .wechat-x:hover { color: var(--terracotta); }
-.wechat-id {
-    display: flex; align-items: center; justify-content: center; gap: .5rem; width: 100%;
-    margin-top: .7rem; padding: .5rem .6rem; cursor: pointer;
-    background: var(--cream-2); border: 0; border-radius: 8px;
-    font-family: var(--font-body); font-size: .87rem; font-weight: 700; color: var(--forest);
+
+/* one block per line — each line has its own WeChat account */
+.wechat-accounts { display: grid; gap: .95rem; }
+.wechat-acct { display: grid; justify-items: center; gap: .4rem; }
+.wechat-acct + .wechat-acct {
+    padding-top: .95rem;
+    border-top: 1px dashed color-mix(in srgb, var(--forest) 20%, transparent);
 }
-.wechat-id:hover { background: var(--sand); }
-.wechat-id em { font-style: normal; font-size: .7rem; font-weight: 600; color: var(--terracotta); }
+.wechat-acct img { border-radius: 8px; background: #fff; }
+.wechat-acct span { font-size: .84rem; font-weight: 700; color: var(--forest); letter-spacing: .01em; }
 .wechat-open {
-    display: block; margin-top: .5rem; padding: .55rem; border-radius: 8px;
-    background: var(--forest); color: var(--cream); font-size: .84rem; font-weight: 700;
+    display: block; width: 100%; padding: .45rem .6rem; border-radius: 8px;
+    background: var(--forest); color: var(--cream); font-size: .78rem; font-weight: 700;
 }
 .wechat-open:hover { background: var(--forest-2); }
 
@@ -394,16 +397,18 @@ footer .chan-wa { color: var(--sage); }
 footer .chan-wc { color: color-mix(in srgb, var(--terracotta) 72%, var(--cream)); }
 .ticks .chan-note { font-size: .82rem; color: var(--muted); }
 
-/* WeChat QR block on the contact card */
+/* WeChat QR block on the contact card — one QR per line, side by side */
 .wechat-inline {
-    display: flex; align-items: center; gap: 1rem; margin-top: 1.4rem; padding-top: 1.3rem;
+    margin-top: 1.4rem; padding-top: 1.3rem;
     border-top: 1px dashed color-mix(in srgb, var(--forest) 22%, transparent);
 }
-.wechat-inline img { width: 132px; height: 132px; flex: none; border-radius: 8px; background: #fff; }
 .wechat-inline strong { display: block; font-family: var(--font-display); color: var(--forest); font-size: 1.05rem; }
-.wechat-inline p { margin: .3rem 0 .45rem; font-size: .84rem; color: var(--muted); }
-.wechat-inline span { font-weight: 700; font-size: .9rem; color: var(--terracotta-2); }
-@media (max-width: 520px) { .wechat-inline { flex-direction: column; align-items: flex-start; } }
+.wechat-inline p { margin: .3rem 0 1rem; font-size: .84rem; color: var(--muted); }
+.wechat-inline .wechat-accounts { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.wechat-inline .wechat-acct + .wechat-acct { padding-top: 0; border-top: 0; }
+.wechat-inline .wechat-acct img { width: 100%; height: auto; max-width: 148px; }
+.wechat-inline .wechat-acct span { color: var(--terracotta-2); font-size: .86rem; }
+@media (max-width: 420px) { .wechat-inline .wechat-accounts { grid-template-columns: 1fr; } }
 
 /* ---------- responsive ---------- */
 @media (max-width: 980px) {

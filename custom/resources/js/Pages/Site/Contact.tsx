@@ -3,12 +3,14 @@ import SiteLayout from "@/Layouts/SiteLayout";
 import PageHero from "@/Components/PageHero";
 import PhoneLines from "@/Components/PhoneLines";
 import Reveal from "@/Components/Reveal";
+import { useContactLines } from "@/contactLines";
 import { useShared, useT } from "@/i18n";
 import type { Seo } from "@/types";
 
 export default function Contact({ seo, products }: { seo: Seo; products: string[] }) {
     const { t, url } = useT();
     const { settings, flash } = useShared();
+    const wechatAccounts = useContactLines().filter((l) => l.wechatQr);
     const preselect = typeof window !== "undefined"
         ? new URLSearchParams(window.location.search).get("product") ?? ""
         : "";
@@ -89,13 +91,20 @@ export default function Contact({ seo, products }: { seo: Seo; products: string[
                                 <li>{settings.address_en}</li>
                                 <li>{settings.china_office}</li>
                             </ul>
-                            {settings.wechat_qr && (
+                            {wechatAccounts.length > 0 && (
                                 <div className="wechat-inline">
-                                    <img src={settings.wechat_qr} alt="Scan to add ALMESBAH on WeChat" width={132} height={132} />
-                                    <div>
-                                        <strong>{t("wechat.title", "Add us on WeChat")}</strong>
-                                        <p>{t("wechat.scan", "Scan this QR code in WeChat to add us")}</p>
-                                        {settings.wechat_id && <span dir="ltr">{settings.wechat_id}</span>}
+                                    <strong>{t("wechat.title", "Add us on WeChat")}</strong>
+                                    <p>{t("wechat.scan", "Scan this QR code in WeChat to add us")}</p>
+                                    <div className="wechat-accounts">
+                                        {wechatAccounts.map((a) => (
+                                            <div className="wechat-acct" key={a.phone}>
+                                                {a.wechatQr && (
+                                                    <img src={a.wechatQr} width={140} height={140}
+                                                        alt={`Scan to add ${a.phone} on WeChat`} />
+                                                )}
+                                                <span dir="ltr">{a.phone}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             )}

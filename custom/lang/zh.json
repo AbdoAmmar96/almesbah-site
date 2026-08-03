@@ -18,8 +18,6 @@
   "wechat.title": "添加我们的微信",
   "wechat.scan": "用微信扫描二维码添加我们",
   "wechat.open": "在微信中打开",
-  "wechat.copy": "复制",
-  "wechat.copied": "已复制 ✓",
   "wechat.hint": "两个号码均可通过 WhatsApp 和微信联系。",
   "contact.both_channels": "两个号码均可通过 WhatsApp 和微信联系。",
   "footer.rights": "版权所有。",
