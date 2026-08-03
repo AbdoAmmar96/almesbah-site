@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import WhatsAppFloat from "@/Components/WhatsAppFloat";
+import WeChatFloat from "@/Components/WeChatFloat";
 import { useShared } from "@/i18n";
 import type { Seo } from "@/types";
 
@@ -17,8 +18,8 @@ export default function SiteLayout({ seo, children }: { seo: Seo; children: Reac
         name: "ALMESBAH For Export",
         url: typeof window !== "undefined" ? window.location.origin : "",
         email: settings.email,
-        telephone: settings.phone,
-        address: { "@type": "PostalAddress", addressLocality: "Shubrameles, Zefta", addressRegion: "Gharbia", addressCountry: "EG" },
+        telephone: [settings.phone, settings.phone2].filter(Boolean),
+        address: { "@type": "PostalAddress", addressLocality: "Shubramillis, Zefta", addressRegion: "Gharbia", addressCountry: "EG" },
         sameAs: settings.linkedin ? [settings.linkedin] : [],
     };
 
@@ -36,6 +37,7 @@ export default function SiteLayout({ seo, children }: { seo: Seo; children: Reac
             <Header />
             <main>{children}</main>
             <Footer />
+            <WeChatFloat />
             <WhatsAppFloat />
         </>
     );

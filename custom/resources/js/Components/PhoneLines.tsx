@@ -1,0 +1,51 @@
+import { useShared, useT } from "@/i18n";
+
+const WaIcon = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5a.6.6 0 0 0 0-.5c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4.1 15.4 15.4 0 0 0 1.5.6 3.7 3.7 0 0 0 1.7.1 2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z" />
+    </svg>
+);
+
+const WcIcon = () => (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <path d="M8.69 2.19C3.89 2.19 0 5.48 0 9.53c0 2.21 1.17 4.2 3 5.55a.59.59 0 0 1 .21.66l-.39 1.48a.44.44 0 0 0-.04.21c0 .17.13.3.29.3a.33.33 0 0 0 .17-.06l1.9-1.11a.86.86 0 0 1 .72-.1c.9.26 1.85.4 2.83.4.28 0 .55-.02.82-.05-.86-2.58.15-4.97 1.93-6.44 1.7-1.42 3.88-1.98 5.85-1.84-.58-3.58-4.2-6.35-8.6-6.35Zm-2.9 3.8c.64 0 1.16.53 1.16 1.18a1.17 1.17 0 0 1-1.17 1.18 1.17 1.17 0 0 1-1.16-1.18c0-.65.52-1.18 1.16-1.18Zm5.81 0c.65 0 1.17.53 1.17 1.18a1.17 1.17 0 0 1-1.17 1.18 1.17 1.17 0 0 1-1.16-1.18c0-.65.52-1.18 1.16-1.18Zm5.34 2.87c-1.79-.05-3.74.51-5.28 1.78-1.72 1.43-2.68 3.72-1.78 6.22.95 2.46 3.67 4.23 6.89 4.23.82 0 1.62-.12 2.36-.35a.72.72 0 0 1 .6.09l1.58.92a.27.27 0 0 0 .14.05c.13 0 .24-.11.24-.25a.62.62 0 0 0-.04-.17l-.32-1.24a.58.58 0 0 1-.03-.15.49.49 0 0 1 .2-.4C23.02 18.48 24 16.82 24 14.98c0-3.21-2.93-5.84-6.66-6.09Zm-3.35 3.19c.53 0 .97.44.97.98a.98.98 0 0 1-.97.99.98.98 0 0 1-.97-.99c0-.54.43-.98.97-.98Zm4.84 0c.54 0 .97.44.97.98a.98.98 0 0 1-.97.99.98.98 0 0 1-.97-.99c0-.54.44-.98.97-.98Z" />
+    </svg>
+);
+
+/** Both company lines carry WhatsApp and WeChat — the badges say so, and link out. */
+export default function PhoneLines({ compact = false }: { compact?: boolean }) {
+    const { settings } = useShared();
+    const { t } = useT();
+
+    const lines = [
+        { phone: settings.phone, wa: settings.whatsapp },
+        { phone: settings.phone2, wa: settings.whatsapp2 },
+    ].filter((l) => l.phone);
+
+    return (
+        <>
+            {lines.map((l) => (
+                <li key={l.phone}>
+                    <a href={`tel:${l.phone.replace(/[\s()-]/g, "")}`} dir="ltr">{l.phone}</a>
+                    <span className="chans">
+                        {l.wa && (
+                            <a className="chan chan-wa" href={`https://wa.me/${l.wa}`} target="_blank" rel="noreferrer"
+                                aria-label={`WhatsApp ${l.phone}`}>
+                                <WaIcon />WhatsApp
+                            </a>
+                        )}
+                        {settings.wechat_url && (
+                            <a className="chan chan-wc" href={settings.wechat_url} target="_blank" rel="noreferrer"
+                                aria-label={`WeChat ${l.phone}`}>
+                                <WcIcon />WeChat
+                            </a>
+                        )}
+                    </span>
+                </li>
+            ))}
+            {!compact && (
+                <li className="chan-note">{t("contact.both_channels", "Both lines are reachable on WhatsApp and WeChat.")}</li>
+            )}
+        </>
+    );
+}

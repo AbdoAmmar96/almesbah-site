@@ -15,12 +15,12 @@ class SeoMetaSeeder extends Seeder
                 'ALMESBAH mills flax in Egypt\'s Nile Delta and ships scutched flax, hackled flax, tow, and twines to 10 countries. ISO 9001:2015 certified. Request a quote.',
             ],
             'about' => [
-                'About ALMESBAH — Flax Mill in Egypt, Office in Guangzhou',
-                'One of the Middle East\'s oldest and largest flax producers. Mill in Shubrameles, Egypt; offices in Guangzhou & Hebei, China; customers across Europe and Asia.',
+                'About ALMESBAH — Egypt Flax Mill, Guangzhou & Hebei Offices',
+                'One of the Middle East\'s oldest and largest flax producers. Mill in Shubramillis, Egypt; offices in Guangzhou & Hebei, China; customers across Europe and Asia.',
             ],
             'products' => [
                 'Flax Fiber Products — Scutched, Hackled, Tow, Twines | ALMESBAH',
-                'Eight flax product lines from one Egyptian mill: cottonised flax, scutched flax (Grade A/B), hackled flax, dolls, Arrous tow, spools, twines, and plumbing fiber.',
+                'Eight flax product lines from one Egyptian mill: cottonised flax, scutched flax (Grades A/B/C), hackled flax, dolls, Arrous tow, spools, twines, and plumbing fiber.',
             ],
             'industries' => [
                 'Industries We Supply — Spinning, Paper, Insulation, Plumbing',
@@ -32,7 +32,7 @@ class SeoMetaSeeder extends Seeder
             ],
             'gallery' => [
                 'Gallery — Inside Our Flax Mill | ALMESBAH',
-                'Photos from the ALMESBAH mill in Shubrameles: scutching, hackling, baling, and shipments on their way to Europe and Asia.',
+                'Photos from the ALMESBAH mill in Shubramillis: scutching, hackling, baling, and shipments on their way to Europe and Asia.',
             ],
             'blog' => [
                 'Flax Fiber Knowledge Base | ALMESBAH Blog',
@@ -44,7 +44,7 @@ class SeoMetaSeeder extends Seeder
             ],
             'contact' => [
                 'Contact ALMESBAH — Request a Flax Fiber Quote',
-                'Tell us the fiber, quantity, and destination. Our team in Egypt and Guangzhou replies with specs, packing options, and a firm offer.',
+                'Tell us the fiber, quantity, and destination. Our team in Egypt, Guangzhou and Hebei replies with specs, packing options, and a firm offer.',
             ],
         ];
 
@@ -54,12 +54,12 @@ class SeoMetaSeeder extends Seeder
                 'ALMESBAH 在埃及尼罗河三角洲自有工厂加工亚麻，向全球十国出口打成麻、梳成麻、短麻与麻线。ISO 9001:2015 认证，欢迎询价。',
             ],
             'about' => [
-                '关于 ALMESBAH —— 埃及亚麻工厂，广州办事处',
-                '中东历史最悠久、规模最大的亚麻生产商之一。工厂位于埃及舒卜拉迈勒斯，办事处设在广州与河北，客户遍布欧亚。',
+                '关于 ALMESBAH —— 埃及亚麻工厂，广州与河北办事处',
+                '中东历史最悠久、规模最大的亚麻生产商之一。工厂位于埃及舒卜拉米利斯，办事处设在广州与河北，客户遍布欧亚。',
             ],
             'products' => [
                 '亚麻纤维产品 —— 打成麻、梳成麻、短麻、麻线 | ALMESBAH',
-                '一家埃及工厂的八大亚麻产品线：棉型亚麻、打成麻（A/B 级）、梳成麻、麻把、回收短麻、麻纱线轴、麻线与管道密封麻。',
+                '一家埃及工厂的八大亚麻产品线：棉型亚麻、打成麻（A/B/C 级）、梳成麻、麻把、回收短麻、麻纱线轴、麻线与管道密封麻。',
             ],
             'industries' => [
                 '供应行业 —— 纺纱、造纸、保温、管道密封',
@@ -71,7 +71,7 @@ class SeoMetaSeeder extends Seeder
             ],
             'gallery' => [
                 '工厂实景 —— 走进我们的亚麻工厂 | ALMESBAH',
-                '舒卜拉迈勒斯 ALMESBAH 工厂实拍：打麻、梳麻、打包，以及发往欧亚的货柜。',
+                '舒卜拉米利斯 ALMESBAH 工厂实拍：打麻、梳麻、打包，以及发往欧亚的货柜。',
             ],
             'blog' => [
                 '亚麻纤维知识库 | ALMESBAH 博客',
@@ -83,7 +83,7 @@ class SeoMetaSeeder extends Seeder
             ],
             'contact' => [
                 '联系 ALMESBAH —— 获取亚麻纤维报价',
-                '告诉我们纤维品类、数量与目的港。埃及与广州团队将回复规格、包装方案与正式报价。',
+                '告诉我们纤维品类、数量与目的港。埃及、广州与河北团队将回复规格、包装方案与正式报价。',
             ],
         ];
 

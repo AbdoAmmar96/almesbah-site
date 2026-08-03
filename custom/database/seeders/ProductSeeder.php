@@ -95,7 +95,7 @@ MD,
                     'description' => <<<'MD'
 Hackling combs scutched flax over beds of fine pins, stripping out short fibers and remaining shives until only parallel, uniform line fiber is left. It is the raw material for fine linen spinning.
 
-We supply **hackled flax** to mills in Belgium, France, and Russia, and **hackled line sliver** to Belgium and Romania. We also hold a good, long-term market in **India and Pakistan** for long flax fiber and flax sliver.
+We supply **hackled flax** to mills in Belgium, France, and Russia, and **hackled line sliver** to Belgium and Romania. We also have a good and long-term market in **India and Pakistan** for long flax fiber, short flax fiber, cottonised flax, and flax sliver.
 MD,
                     'specs' => [
                         ['label' => 'Process',        'value' => 'Combed (hackled) line fiber'],

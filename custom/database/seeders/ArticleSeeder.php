@@ -49,10 +49,11 @@ Buyers new to flax mix these two terms up all the time — and ordering the wron
 
 Flax fiber grows inside the stem of the plant, bonded to a woody core. After the straw is retted (partially broken down by moisture), it goes through the scutching turbine. Rotating blades beat the straw, shattering the woody parts — called **shives** — and separating out the long line fiber.
 
-What comes out is **scutched flax**: long, usable fiber that still carries some shive and some tangled short fiber. At our mill we press it into bales of roughly 250 kg and grade it two ways:
+What comes out is **scutched flax**: long, usable fiber that still carries some shive and some tangled short fiber. At our mill we press it into bales of roughly 250 kg and grade it three ways:
 
 - **Grade A** — clean, well-dressed, free of shives. This is what spinners running finer counts ask for.
 - **Grade B** — more shive content, lower price. Perfectly good where absolute cleanliness is not critical.
+- **Grade C** — the entry grade: the highest shive content at the lowest price, for cost-driven applications and processes that run their own cleaning stage.
 
 Scutching also produces a valuable by-product: **tow**, the short fiber knocked out during the process. Cleaned a second time, it becomes [rescutched tow (Arrous)](/en/products/rescutched-tow-arrous) — a workhorse fiber for coarser yarns and felts.
 
@@ -166,7 +167,7 @@ Shives are the fragments of the woody stem core that scutching shatters and (mos
 | Technical / composite fiber | Grade B (test first) |
 | Price-driven, own cleaning stage downstream | Grade C |
 
-Both grades ship from our mill in pressed bales of about 250 kg. [Tell us your application](/en/contact) and we will quote the grades side by side — sometimes the honest answer is that Grade B or C does your job at Grade B or C money.
+All three grades ship from our mill in pressed bales of about 250 kg. [Tell us your application](/en/contact) and we will quote the grades side by side — sometimes the honest answer is that Grade B or C does your job at Grade B or C money.
 MD,
                 ],
             ],
@@ -218,7 +219,7 @@ Commercial invoice, packing list, bill of lading, certificate of origin, and —
 
 Ask for a bale sample or a trial quantity from the actual production lot. Run it. Then contract the volume. Every reputable mill will support this sequence, because a customer whose trial ran clean is a customer for years.
 
-Have a destination and a target spec in mind? [Send us the details](/en/contact) — our team in Egypt and our Guangzhou office respond with packing options, lead times, and a firm offer.
+Have a destination and a target spec in mind? [Send us the details](/en/contact) — our team in Egypt and our Guangzhou & Hebei offices respond with packing options, lead times, and a firm offer.
 MD,
                 ],
             ],

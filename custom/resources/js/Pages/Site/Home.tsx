@@ -31,7 +31,7 @@ export default function Home({ seo, products, articles }:
                         <Reveal delay={1}><h1>{t("home.hero_t1", "Egyptian flax fiber, ")}<em>{t("home.hero_t2", "straight from the mill.")}</em></h1></Reveal>
                         <Reveal delay={2}>
                             <p className="lead" style={{ marginTop: "1.2rem" }}>
-                                {t("home.hero_lead", "ALMESBAH scutches, hackles, and bales flax in Shubrameles — then ships it to spinners and manufacturers in ten countries. One supplier, from field to container.")}
+                                {t("home.hero_lead", "ALMESBAH scutches, hackles, and bales flax in Shubramillis — then ships it to spinners and manufacturers in ten countries. One supplier, from field to container.")}
                             </p>
                         </Reveal>
                         <Reveal delay={3}>
@@ -43,7 +43,7 @@ export default function Home({ seo, products, articles }:
                                 <div><strong>8</strong><span>{t("home.proof_products", "product lines")}</span></div>
                                 <div><strong>10</strong><span>{t("home.proof_countries", "export countries")}</span></div>
                                 <div><strong>ISO</strong><span>{t("home.proof_iso", "9001:2015 certified")}</span></div>
-                                <div><strong>EG + CN</strong><span>{t("home.proof_offices", "mill & Guangzhou office")}</span></div>
+                                <div><strong>EG + CN</strong><span>{t("home.proof_offices", "mill & China offices")}</span></div>
                             </div>
                         </Reveal>
                     </div>
@@ -57,7 +57,7 @@ export default function Home({ seo, products, articles }:
                             <img src="/images/products/hackled-flax.jpg" alt="Hackled Egyptian flax fiber" />
                         </div>
                         <div className="chip">
-                            <strong>{t("home.chip_t", "Shubrameles → the world.")}</strong><br />
+                            <strong>{t("home.chip_t", "Shubramillis → the world.")}</strong><br />
                             {t("home.chip_p", "The Delta has dressed flax for 5,000 years. We just put it in containers.")}
                         </div>
                     </Reveal>
@@ -123,7 +123,7 @@ export default function Home({ seo, products, articles }:
                         <span className="eyebrow">{t("nav.about")}</span>
                         <h2 style={{ margin: ".7rem 0 1rem" }}>{t("home.about_title", "One of the Middle East's oldest flax houses")}</h2>
                         <p>
-                            {t("home.about_p", "Our mill sits in Shubrameles, Gharbia — in the Delta soil where flax has been worked for millennia — and our offices in Guangzhou and Hebei keep us a phone call away from Asia's spinning industry.")}
+                            {t("home.about_p", "Our mill sits in Shubramillis, Gharbia — in the Delta soil where flax has been worked for millennia — and our offices in Guangzhou and Hebei keep us a phone call away from Asia's spinning industry.")}
                         </p>
                         <ul className="ticks">
                             <li>{t("home.tick1", "Complete line: scutching, hackling, tow recovery, twines, retail put-ups")}</li>

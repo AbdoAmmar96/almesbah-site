@@ -1,6 +1,7 @@
 import { useForm } from "@inertiajs/react";
 import SiteLayout from "@/Layouts/SiteLayout";
 import PageHero from "@/Components/PageHero";
+import PhoneLines from "@/Components/PhoneLines";
 import Reveal from "@/Components/Reveal";
 import { useShared, useT } from "@/i18n";
 import type { Seo } from "@/types";
@@ -27,7 +28,7 @@ export default function Contact({ seo, products }: { seo: Seo; products: string[
             <PageHero
                 eyebrow={t("nav.contact")}
                 title={<>{t("contact.hero_t1", "Fiber, quantity, destination.")}<br /><em style={{ color: "var(--terracotta)" }}>{t("contact.hero_t2", "We take it from there.")}</em></>}
-                lead={t("contact.hero_lead", "One business day to a reply — from Egypt or Guangzhou, whichever is awake.")}
+                lead={t("contact.hero_lead", "One business day to a reply — from Egypt or China, whichever is awake.")}
             />
             <section>
                 <div className="wrap split" style={{ alignItems: "start" }}>
@@ -84,15 +85,20 @@ export default function Contact({ seo, products }: { seo: Seo; products: string[
                             <h3>Direct lines</h3>
                             <ul className="ticks" style={{ marginTop: ".8rem" }}>
                                 <li><a href={`mailto:${settings.email}`}>{settings.email}</a></li>
-                                <li><a href={`tel:${settings.phone?.replace(/\s/g, "")}`}>{settings.phone}</a></li>
-                                <li>
-                                    <a href={`https://wa.me/${settings.whatsapp}`} target="_blank" rel="noreferrer">
-                                        WhatsApp — fastest for samples & photos
-                                    </a>
-                                </li>
+                                <PhoneLines />
                                 <li>{settings.address_en}</li>
                                 <li>{settings.china_office}</li>
                             </ul>
+                            {settings.wechat_qr && (
+                                <div className="wechat-inline">
+                                    <img src={settings.wechat_qr} alt="Scan to add ALMESBAH on WeChat" width={132} height={132} />
+                                    <div>
+                                        <strong>{t("wechat.title", "Add us on WeChat")}</strong>
+                                        <p>{t("wechat.scan", "Scan this QR code in WeChat to add us")}</p>
+                                        {settings.wechat_id && <span dir="ltr">{settings.wechat_id}</span>}
+                                    </div>
+                                </div>
+                            )}
                             {settings.map_url && (
                                 <a href={settings.map_url} target="_blank" rel="noreferrer" className="btn btn-ghost" style={{ marginTop: "1.4rem" }}>
                                     Open mill location →

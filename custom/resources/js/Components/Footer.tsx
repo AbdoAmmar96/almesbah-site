@@ -1,4 +1,5 @@
 import { Link } from "@inertiajs/react";
+import PhoneLines from "@/Components/PhoneLines";
 import { useShared, useT } from "@/i18n";
 
 export default function Footer() {
@@ -14,7 +15,9 @@ export default function Footer() {
                     <span>
                         <a href={`mailto:${settings.email}`}>{settings.email}</a>
                         &nbsp;·&nbsp;
-                        <a href={`tel:${settings.phone?.replace(/\s/g, "")}`}>{settings.phone}</a>
+                        <a href={`tel:${settings.phone?.replace(/\s/g, "")}`} dir="ltr">{settings.phone}</a>
+                        {settings.phone2 && <>&nbsp;·&nbsp;
+                            <a href={`tel:${settings.phone2.replace(/\s/g, "")}`} dir="ltr">{settings.phone2}</a></>}
                     </span>
                 </div>
                 <div className="cols">
@@ -45,7 +48,7 @@ export default function Footer() {
                         <h4>{t("footer.contact")}</h4>
                         <ul>
                             <li><a href={`mailto:${settings.email}`}>{settings.email}</a></li>
-                            <li><a href={`tel:${settings.phone?.replace(/\s/g, "")}`}>{settings.phone}</a></li>
+                            <PhoneLines compact />
                             <li><a href={settings.map_url} target="_blank" rel="noopener">{settings.address_en}</a></li>
                         </ul>
                     </div>
