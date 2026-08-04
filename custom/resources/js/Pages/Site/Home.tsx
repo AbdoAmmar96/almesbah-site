@@ -54,7 +54,7 @@ export default function Home({ seo, products, articles }:
                             ))}
                         </div>
                         <div className="frame">
-                            <img src="/images/products/hackled-flax.jpg" alt="Hackled Egyptian flax fiber" />
+                            <img src="/images/flax-field.jpg" alt="Egyptian flax in the field, Nile Delta" />
                         </div>
                         <div className="chip">
                             <strong>{t("home.chip_t", "Shubramillis → the world.")}</strong><br />
