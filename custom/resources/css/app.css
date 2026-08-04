@@ -428,8 +428,13 @@ footer .chan-wc { color: color-mix(in srgb, var(--terracotta) 72%, var(--cream))
         background: var(--forest-2);
         flex-direction: column; justify-content: center; align-items: center;
         gap: 1.5rem; padding: 5.5rem 8vw 3rem;
+        overflow-y: auto; overscroll-behavior: contain;
     }
     .nav-links.open { display: flex; }
+    /* Nothing in the menu may shrink. .lang-switch clips its own text
+       (overflow:hidden), so on short screens flex-shrink collapsed the pill to
+       a bare 1.5px line and the language links vanished instead of overflowing. */
+    .nav-links > * { flex-shrink: 0; }
     /* the floats are siblings of <header>, so they'd otherwise paint over the
        fullscreen menu — hide them for as long as it is open. */
     body:has(.nav-links.open) .wa,
@@ -444,6 +449,16 @@ footer .chan-wc { color: color-mix(in srgb, var(--terracotta) 72%, var(--cream))
     .nav .wrap:has(.nav-links.open) .brand { position: relative; z-index: 61; }
     .nav .wrap:has(.nav-links.open) .brand .brand-dark { display: none; }
     .nav .wrap:has(.nav-links.open) .brand .brand-light { display: block; }
+
+    /* Short viewports (iPhone SE, most Android, and anything in landscape):
+       tighten up and anchor to the top — centring an overflowing flex column
+       pushes the first items above the scroll origin, out of reach. */
+    @media (max-height: 720px) {
+        .nav-links { justify-content: flex-start; gap: 1rem; padding: 4.6rem 8vw 2.4rem; }
+        .nav-links a:not(.btn) { font-size: 1.15rem; }
+        .nav-links a.btn { margin-top: .6rem; }
+        .nav-links .lang-switch { margin-top: .4rem; }
+    }
 
     /* photo leads on small screens: home hero + any split section (about) */
     .hero-art { order: -1; margin-bottom: 2rem; }
